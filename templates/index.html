@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Cine | Inicio</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="static/img/logo2.png" alt="Logo de Proyecto Cine" class="logo">
+            <nav>
+                <ul class="menu">
+                    <li><a href="#peliculas">Películas</a></li>
+                    <li><a href="#login">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section id="peliculas">
+        <h2>Películas en Cartelera</h2>
+        <div class="peliculas-lista">
+            <div class="pelicula">
+                <img src="static/img/venom.jpg" alt="Venom El Ultimo Baile">
+                <h3>Venom El Ultimo Baile</h3>
+            </div>
+            <div class="pelicula">
+                <img src="static/img/terrifier-3.jpg" alt="Terrifier 3 El Payaso Siniestro">
+                <h3>Terrifier 3 El Payaso Siniestro</h3>
+            </div>
+            <div class="pelicula">
+                <img src="static/img/sonrie2.jpg" alt="Sonrie 2">
+                <h3>Sonrie 2</h3>
+            </div>
+            <div class="pelicula">
+                <img src="static/img/robot-salvaje.jpg" alt="Robot Salvaje">
+                <h3>Robot Salvaje</h3>
+            </div>
+            <div class="pelicula">
+                <img src="static/img/la-leyenda-del-dragon.jpg" alt="La Leyenda Del Dragon">
+                <h3>La Leyenda Del Dragon</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="login">
+        <h2>Ingreso de Usuario</h2>
+        <form action="{{ url_for('ingresar_datos') }}" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+            
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" min="0" max="120" required><br><br>
+            
+            <button type="submit">Ingresar</button>
+        </form>
+    </section><br><br>
+
+    <footer>
+        <p>&copy; 2024 Proyecto Cine. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

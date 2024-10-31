@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Película</title>
+    <link rel="stylesheet" href="static\style.css">
+</head>
+<body><br><br>
+    <h1>Selecciona la Película</h1>
+    <form action="{{ url_for('confirmar_pelicula') }}" method="POST">
+        <label for="pelicula">Película:</label>
+        <select id="pelicula" name="pelicula" required>
+            {% for pelicula in peliculas %}
+            <option value="{{ pelicula }}">{{ pelicula }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <input type="hidden" name="nombre" value="{{ nombre }}">
+        <input type="hidden" name="edad" value="{{ edad }}">
+        <input type="hidden" name="fecha" value="{{ fecha }}">
+        
+        <button type="submit">Confirmar Película</button>
+    </form>
+</body>
+</html>
